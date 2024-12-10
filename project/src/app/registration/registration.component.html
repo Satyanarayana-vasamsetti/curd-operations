@@ -1,0 +1,21 @@
+<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+  <input type="text" name="username" id="" placeholder="Enter Username" class="form-control" formControlName="username">
+  <div *ngIf="fg.get('username')?.invalid && fg.get('username')?.touched">
+    <small *ngIf="fg.get('username')?.errors?.['required']">Please fill the details</small>
+    <small *ngIf="fg.get('username')?.errors?.['minLength']">Username must consists five characters</small>
+    <small *ngIf="fg.get('username')?.errors?.['maxLength']">Please check the username</small>
+  </div>
+  <input type="email" name="email" id="" placeholder="Enter Your Email" class="form-control" formControlName="email">
+  <div *ngIf="fg.get('email')?.invalid && fg.get('email')?.touched">
+    <small *ngIf="fg.get('email')?.errors?.['required']">Please enter email</small>
+    <small *ngIf="fg.get('email')?.errors?.['email']">Please enter valid email</small>
+    <small *ngIf="fg.get('email')?.errors?.['pattern']">Invalid email</small>
+  </div>
+  <input type="password" name="" id="" placeholder="Enter Your Password" class="form-control" formControlName="password">
+  <div *ngIf="fg.get('password')?.invalid && fg.get('password')?.touched">
+    <small *ngIf="fg.get('password')?.errors?.['required']">Please enter password</small>
+    <small *ngIf="fg.get('password')?.errors?.['minLength']">Password must be consists of eight characters</small>
+    <small *ngIf="fg.get('password')?.errors?.['maxLength']">Invalid password</small>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="fg.invalid">Submit</button>
+</form>

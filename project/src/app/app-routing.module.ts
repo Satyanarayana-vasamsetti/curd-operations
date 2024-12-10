@@ -3,9 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { RegistrationComponent } from './registration/registration.component';
+
 const routes: Routes = [
   {
     path:"",component:DashboardComponent
+  },{
+    path:'login',component:RegistrationComponent
   },
   {
     path:"**",component:PageNotFoundComponent
