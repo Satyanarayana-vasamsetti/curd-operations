@@ -7,4 +7,5 @@ export class Student {
   password! : string;
   description! :string;
   description1! :string;
+  username!:string;
 }

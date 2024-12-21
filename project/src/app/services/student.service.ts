@@ -9,22 +9,22 @@ import { Student } from '../model/student';
 })
 export class StudentService {
 
-  private baseurl = "https://sheetdb.io/api/v1/y91068n0p4mgr";
+  private baseurl = "https://sheetdb.io/api/v1/26un9pc321bow";
   constructor(private http:HttpClient) { }
 
   getAll():Observable<any[]>{
-    return this.http.get<any[]>(`${this.baseurl}`)
+    return this.http.get<any[]>(`${this.baseurl}`);
   }
   getByEmail(email:string):Observable<any[]>{
-    return this.http.get<any[]>(`${this.baseurl}/searchbyemail?=${email}`)
+    return this.http.get<any[]>(`${this.baseurl}/search?email=${email}`);
   }
-  addUser(record:Student):Observable<any[]>{
-    return this.http.post<any[]>(this.baseurl,{data:record})
+  addUser(records:Student):Observable<any>{
+    return this.http.post<any>(this.baseurl,{data:records});
   }
   deleteUser(id:number):Observable<any[]>{
-    return this.http.delete<any[]>(`${this.baseurl}/id?=${id}`)
+    return this.http.delete<any[]>(`${this.baseurl}/id/${id}`)
   }
   updateUser(id:number,record:StudentService):Observable<any[]>{
-    return this.http.put<any[]>(`${this.baseurl}/id?=${id}`,{data:record})
+    return this.http.put<any[]>(`${this.baseurl}/id/${id}`,{data:record})
   }
 }
