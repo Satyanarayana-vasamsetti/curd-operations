@@ -1,4 +1,4 @@
-<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+<form [formGroup]="fg" (ngSubmit)="adduser()">
   <input type="text" name="username" id="" placeholder="Enter Username" class="form-control" formControlName="username">
   <div *ngIf="fg.get('username')?.invalid && fg.get('username')?.touched">
     <small *ngIf="fg.get('username')?.errors?.['required']">Please fill the details</small>
