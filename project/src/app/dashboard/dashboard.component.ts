@@ -16,4 +16,5 @@ export class DashboardComponent {
   getall():void{
     this.service.getAll().subscribe(data=>this.records=data);
   }
+  
 }
