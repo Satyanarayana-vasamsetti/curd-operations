@@ -24,7 +24,7 @@ export class StudentService {
   deleteUser(id:number):Observable<any[]>{
     return this.http.delete<any[]>(`${this.baseurl}/id/${id}`)
   }
-  updateUser(id:number,record:StudentService):Observable<any[]>{
+  updateUser(id:number,record:Student):Observable<any[]>{
     return this.http.put<any[]>(`${this.baseurl}/id/${id}`,{data:record})
   }
 }
